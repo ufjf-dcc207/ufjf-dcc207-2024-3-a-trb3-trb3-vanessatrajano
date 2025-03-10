@@ -1,9 +1,10 @@
 import './App.css'
+import Flashcard from './components/Flashcard'
 
 function App() {
   return (
     <>
-     Funciona!
+     <Flashcard/>
     </>
   )
 }
