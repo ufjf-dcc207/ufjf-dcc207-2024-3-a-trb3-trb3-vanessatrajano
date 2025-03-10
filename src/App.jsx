@@ -6,8 +6,8 @@ function App() {
     <>
       <h1>English Flash Cards</h1>
       <div>
-        <input type="text" placeholder="Digite uma palavra em inglês" />
-        <button>Adicionar Palavra</button>
+        <input type="text" placeholder="Type a word in english" />
+        <button>Add word</button>
       </div>
       <Flashcard
         word="aaaaaa"
@@ -17,8 +17,8 @@ function App() {
       />
 
       <div>
-        <button>Flashcard Anterior</button>
-        <button>Próximo Flashcard</button>
+        <button>Previous Flashcard</button>
+        <button>Next Flashcard</button>
       </div>
     </>
   );
