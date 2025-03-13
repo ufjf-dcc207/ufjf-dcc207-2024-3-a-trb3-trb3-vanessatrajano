@@ -1,4 +1,5 @@
 import "./App.css";
+import ButtonsNavigation from "./components/ButtonsNavigation";
 import Flashcard from "./components/Flashcard";
 import WordInput from "./components/WordInput";
 
@@ -13,11 +14,7 @@ function App() {
         example="aaaaaaaaaaa"
         pronunciation="aaaaaaaaa"
       />
-
-      <div>
-        <button>Previous Flashcard</button>
-        <button>Next Flashcard</button>
-      </div>
+      <ButtonsNavigation />
     </>
   );
 }
