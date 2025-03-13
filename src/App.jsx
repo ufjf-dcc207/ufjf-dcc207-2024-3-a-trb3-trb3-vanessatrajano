@@ -1,14 +1,12 @@
 import "./App.css";
 import Flashcard from "./components/Flashcard";
+import WordInput from "./components/WordInput";
 
 function App() {
   return (
     <>
       <h1>English Flash Cards</h1>
-      <div>
-        <input type="text" placeholder="Type a word in english" />
-        <button>Add word</button>
-      </div>
+      <WordInput />
       <Flashcard
         word="aaaaaa"
         definition="aaaaaaaa"
