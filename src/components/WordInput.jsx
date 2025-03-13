@@ -1,6 +1,6 @@
 import React from "react";
 
-function WordInput({ valor, onMudanca }) {
+function WordInput({ valor, onMudanca, onClique }) {
   return (
     <div>
       <input
@@ -9,7 +9,7 @@ function WordInput({ valor, onMudanca }) {
         value={valor}
         onChange={onMudanca}
       />
-      <button>Add word</button>
+      <button onClick={onClique}>Add word</button>
     </div>
   );
 }
