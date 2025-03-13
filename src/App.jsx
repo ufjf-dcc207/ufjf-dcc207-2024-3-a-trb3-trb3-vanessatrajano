@@ -6,7 +6,7 @@ import WordInput from "./components/WordInput";
 
 function App() {
   const [palavra, setPalavra] = useState("");
-  const [resultado, setResultado] = useState();
+  const [resultado, setResultado] = useState(null);
 
   const fetchWord = async () => {
     try {
@@ -28,12 +28,17 @@ function App() {
         onMudanca={(e) => setPalavra(e.target.value)}
         onClique={fetchWord}
       />
-      <Flashcard
-        word="aaaaaa"
-        definition="aaaaaaaa"
-        example="aaaaaaaaaaa"
-        pronunciation="aaaaaaaaa"
-      />
+      {resultado && (
+        <Flashcard
+          word={resultado[0]?.word || "No word"}
+          definition={
+            resultado[0]?.meanings[0]?.definitions[0]?.definition ||
+            "No definition"
+          }
+          example="aaaaaaaaaaa"
+          pronunciation="aaaaaaaaa"
+        />
+      )}
       <ButtonsNavigation />
     </>
   );
