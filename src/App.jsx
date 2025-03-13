@@ -29,6 +29,8 @@ function App() {
             ),
             showAnswer: false,
           };
+        case "MOSTRA_RESPOSTA":
+          return { ...state, showAnswer: !state.showAnswer };
         default:
           return state;
       }
@@ -75,7 +77,7 @@ function App() {
     }
   };
 
-  const { flashcards, currentIndex } = state;
+  const { flashcards, currentIndex, showAnswer } = state;
   const currentFlashcard = flashcards[currentIndex];
 
   return (
@@ -86,6 +88,8 @@ function App() {
       {flashcards.length > 0 && currentFlashcard && (
         <Flashcard
           flashcard={currentFlashcard}
+          mostraResposta={showAnswer}
+          onMostraResposta={() => dispatch({ type: "MOSTRA_RESPOSTA" })}
         />
       )}
 
