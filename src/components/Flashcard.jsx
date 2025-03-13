@@ -1,18 +1,18 @@
 import "./Flashcard.css";
 
-function Flashcard({word, definition, example, pronunciation}) {
+function Flashcard({ flashcard }) {
   return (
     <>
-      <h2>{word}</h2>
+      <h2>{flashcard.palavra}</h2>
       <div>
         <p>
-          <strong>Definition:</strong> {definition}
+          <strong>Definição:</strong> {flashcard.definicao}
         </p>
         <p>
-          <strong>Example:</strong> {example}
+          <strong>Exemplo:</strong> {flashcard.exemplo}
         </p>
         <p>
-          <strong>Pronunciation:</strong> {pronunciation}
+          <strong>Pronúncia:</strong> {flashcard.pronuncia}
         </p>
       </div>
     </>

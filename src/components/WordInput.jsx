@@ -1,13 +1,12 @@
 import React from "react";
 
-function WordInput({ valor, onMudanca, onClique }) {
+function WordInput({ referencia, onClique }) {
   return (
     <div>
       <input
         type="text"
         placeholder="Type a word in english"
-        value={valor}
-        onChange={onMudanca}
+        ref={referencia}
       />
       <button onClick={onClique}>Add word</button>
     </div>
