@@ -7,7 +7,7 @@ function ButtonsNavigation({
   disableProximo,
 }) {
   return (
-    <div>
+    <div className="buttons-container">
       <button onClick={onAnterior} disabled={disableAnterior}>
         Previous Flashcard
       </button>

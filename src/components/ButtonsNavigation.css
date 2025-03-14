@@ -1,0 +1,25 @@
+.buttons-container {
+  width: 300px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  button {
+    height: 90%;
+    padding: 0 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #C1A38C;
+    
+    &:not(:disabled){
+
+        background-color: #a67b5b;
+    }
+
+    &:not(:disabled):hover {
+      box-shadow: 2px 3px 5px #c4a000;
+      margin: 0;
+    }
+  }
+}
