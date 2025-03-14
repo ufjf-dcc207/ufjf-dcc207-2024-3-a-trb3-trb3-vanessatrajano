@@ -2,7 +2,7 @@ import "./WordInput.css";
 
 function WordInput({ referencia, onClique }) {
   return (
-    <div>
+    <div className="input-container">
       <input
         type="text"
         placeholder="Type a word in english"

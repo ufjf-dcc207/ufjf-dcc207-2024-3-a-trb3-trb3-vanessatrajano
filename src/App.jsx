@@ -97,12 +97,12 @@ function App() {
   const currentFlashcard = flashcards[currentIndex];
 
   return (
-    <div>
+    <div className="site-container">
       <h1>English Flash Cards</h1>
       <WordInput referencia={inputRef} onClique={handleAdd} />
 
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
+      {loading && <p className="carregando">Loading...</p>}
+      {error && <p className="erro">Error: {error}</p>}
 
       {flashcards.length > 0 && currentFlashcard && (
         <Flashcard
