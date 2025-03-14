@@ -2,7 +2,7 @@ import "./Flashcard.css";
 
 function Flashcard({ flashcard, mostraResposta, onMostraResposta }) {
   return (
-    <>
+    <div className="flashcard-container">
       <h2>{flashcard.palavra}</h2>
       {mostraResposta && (
         <div>
@@ -20,7 +20,7 @@ function Flashcard({ flashcard, mostraResposta, onMostraResposta }) {
       <button onClick={onMostraResposta}>
         {mostraResposta ? "Hide answer" : "Show answer"}
       </button>
-    </>
+    </div>
   );
 }
 

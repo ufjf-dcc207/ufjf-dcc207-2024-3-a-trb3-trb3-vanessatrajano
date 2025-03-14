@@ -1,0 +1,38 @@
+.flashcard-container{
+    border: 1px solid blue;
+    width: 60%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    h2{
+        font-size: 2.2em;
+    }
+
+    div{
+        border: 1px solid brown;
+        min-width: 350px;
+        width: 60%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-size: 17px;
+    }
+
+    button{
+        width: 110px;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+
+        &:hover{
+            background-color: rgba(95, 158, 160, 0.1);
+            border: 1.5px solid cadetblue;
+            box-shadow: 1px 1px 4px cornflowerblue;
+            margin: 0;
+        }
+    }
+}
