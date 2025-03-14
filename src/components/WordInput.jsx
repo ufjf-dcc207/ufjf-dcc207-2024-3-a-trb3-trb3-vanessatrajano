@@ -1,4 +1,4 @@
-import React from "react";
+import "./WordInput.css";
 
 function WordInput({ referencia, onClique }) {
   return (

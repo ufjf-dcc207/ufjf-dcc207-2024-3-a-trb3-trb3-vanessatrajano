@@ -1,4 +1,4 @@
-import React from "react";
+import "./ButtonsNavigation.css";
 
 function ButtonsNavigation({
   onAnterior,

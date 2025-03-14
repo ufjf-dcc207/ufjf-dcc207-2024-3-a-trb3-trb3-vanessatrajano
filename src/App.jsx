@@ -31,6 +31,10 @@ function App() {
           };
         case "MOSTRA_RESPOSTA":
           return { ...state, showAnswer: !state.showAnswer };
+        case "INICIO_BUSCA_PALAVRA":
+          return { ...state, loading: true, error: null };
+        case "ERRO_BUSCA_PALAVRA":
+          return { ...state, loading: false, error: action.payload };
         default:
           return state;
       }
@@ -39,11 +43,14 @@ function App() {
       flashcards: [],
       currentIndex: 0,
       showAnswer: false,
+      loading: false,
+      error: null,
     }
   );
   const inputRef = useRef(null);
 
   const fetchWord = async (palavra) => {
+    dispatch({ type: "INICIO_BUSCA_PALAVRA" });
     try {
       const response = await fetch(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${palavra}`
@@ -64,7 +71,7 @@ function App() {
       };
       dispatch({ type: "BUSCA_PALAVRA_SUCESSO", payload: flashcard });
     } catch (error) {
-      console.error("Erro na busca", error);
+      dispatch({ type: "ERRO_BUSCA_PALAVRA", payload: error.message });
     }
   };
 
@@ -77,13 +84,16 @@ function App() {
     }
   };
 
-  const { flashcards, currentIndex, showAnswer } = state;
+  const { flashcards, currentIndex, showAnswer, loading, error } = state;
   const currentFlashcard = flashcards[currentIndex];
 
   return (
     <div>
       <h1>English Flash Cards</h1>
       <WordInput referencia={inputRef} onClique={handleAdd} />
+
+      {loading && <p>Loading...</p>}
+      {error && <p>Error: {error}</p>}
 
       {flashcards.length > 0 && currentFlashcard && (
         <Flashcard
