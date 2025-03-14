@@ -97,7 +97,7 @@ function App() {
   const currentFlashcard = flashcards[currentIndex];
 
   return (
-    <div>
+    <div className="site-container">
       <h1>English Flash Cards</h1>
       <WordInput referencia={inputRef} onClique={handleAdd} />
 
