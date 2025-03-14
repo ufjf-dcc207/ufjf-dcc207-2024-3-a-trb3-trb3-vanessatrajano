@@ -1,10 +1,14 @@
-import React from "react";
+import "./WordInput.css";
 
-function WordInput() {
+function WordInput({ referencia, onClique }) {
   return (
     <div>
-      <input type="text" placeholder="Type a word in english" />
-      <button>Add word</button>
+      <input
+        type="text"
+        placeholder="Type a word in english"
+        ref={referencia}
+      />
+      <button onClick={onClique}>Add word</button>
     </div>
   );
 }

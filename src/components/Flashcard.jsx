@@ -1,20 +1,25 @@
 import "./Flashcard.css";
 
-function Flashcard({word, definition, example, pronunciation}) {
+function Flashcard({ flashcard, mostraResposta, onMostraResposta }) {
   return (
     <>
-      <h2>{word}</h2>
-      <div>
-        <p>
-          <strong>Definition:</strong> {definition}
-        </p>
-        <p>
-          <strong>Example:</strong> {example}
-        </p>
-        <p>
-          <strong>Pronunciation:</strong> {pronunciation}
-        </p>
-      </div>
+      <h2>{flashcard.palavra}</h2>
+      {mostraResposta && (
+        <div>
+          <p>
+            <strong>Definition:</strong> {flashcard.definicao}
+          </p>
+          <p>
+            <strong>Example:</strong> {flashcard.exemplo}
+          </p>
+          <p>
+            <strong>Pronunciation:</strong> {flashcard.pronuncia}
+          </p>
+        </div>
+      )}
+      <button onClick={onMostraResposta}>
+        {mostraResposta ? "Hide answer" : "Show answer"}
+      </button>
     </>
   );
 }

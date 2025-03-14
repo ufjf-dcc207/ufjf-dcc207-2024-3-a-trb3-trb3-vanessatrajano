@@ -1,10 +1,19 @@
-import React from "react";
+import "./ButtonsNavigation.css";
 
-function ButtonsNavigation() {
+function ButtonsNavigation({
+  onAnterior,
+  onProximo,
+  disableAnterior,
+  disableProximo,
+}) {
   return (
     <div>
-      <button>Previous Flashcard</button>
-      <button>Next Flashcard</button>
+      <button onClick={onAnterior} disabled={disableAnterior}>
+        Previous Flashcard
+      </button>
+      <button onClick={onProximo} disabled={disableProximo}>
+        Next Flashcard
+      </button>
     </div>
   );
 }
