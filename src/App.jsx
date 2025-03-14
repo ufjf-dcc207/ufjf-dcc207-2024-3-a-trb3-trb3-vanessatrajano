@@ -62,6 +62,11 @@ function App() {
       if (!response.ok) {
         throw new Error("Word not found");
       }
+      state.flashcards.forEach((flashcard) => {
+        if(flashcard.palavra === palavra.toLowerCase()){
+          throw new Error(`Word "${palavra}" already existis on your flashcards`)
+        }
+      })
       const data = await response.json();
       const flashcard = {
         palavra: data[0].word,
