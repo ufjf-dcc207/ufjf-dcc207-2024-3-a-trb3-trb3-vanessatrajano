@@ -1,4 +1,4 @@
-import React, { useReducer, useRef } from "react";
+import React, { useEffect, useReducer, useRef } from "react";
 import WordInput from "./components/WordInput";
 import Flashcard from "./components/Flashcard";
 import ButtonsNavigation from "./components/ButtonsNavigation";
@@ -48,6 +48,10 @@ function App() {
     }
   );
   const inputRef = useRef(null);
+
+  useEffect(() => {
+    console.log("Flashcards atualizados:", state.flashcards);
+  }, [state.flashcards]);
 
   const fetchWord = async (palavra) => {
     dispatch({ type: "INICIO_BUSCA_PALAVRA" });
