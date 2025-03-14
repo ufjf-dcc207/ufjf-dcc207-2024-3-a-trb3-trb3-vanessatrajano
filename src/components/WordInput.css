@@ -1,6 +1,6 @@
 .input-container{
-    border: 1px solid green;
-    width: 350px;
+    min-width: 350px;
+    width: 40%;
     height: 40px;
     display: flex;
     justify-content: space-evenly;
@@ -10,19 +10,19 @@
         width: 70%;
         height: 80%;
         padding-left: 10px;
+         border-radius: 5px;
+         border: 2px solid #A67B5B;
     }
 
     button{
         height: 80%;
-        padding: 0 8px;
+        padding: 0 10px;
         border-radius: 5px;
         border: none;
-        margin: 1.5px;
+        background-color: #A67B5B;
 
         &:hover{
-            background-color: rgba(95, 158, 160, 0.1);
-            border: 1.5px solid cadetblue;
-            box-shadow: 1px 1px 4px cornflowerblue;
+            box-shadow: 2px 3px 5px #C4A000;
             margin: 0;
         }
     }

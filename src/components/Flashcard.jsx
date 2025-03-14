@@ -4,6 +4,21 @@ function Flashcard({ flashcard, mostraResposta, onMostraResposta }) {
   return (
     <div className="flashcard-container">
       <h2>{flashcard.palavra}</h2>
+
+      {!mostraResposta && (
+        <div>
+          <p>
+            <strong>Definition:</strong> ???
+          </p>
+          <p>
+            <strong>Example:</strong> ???
+          </p>
+          <p>
+            <strong>Pronunciation:</strong> ???
+          </p>
+        </div>
+      )}
+
       {mostraResposta && (
         <div>
           <p>
