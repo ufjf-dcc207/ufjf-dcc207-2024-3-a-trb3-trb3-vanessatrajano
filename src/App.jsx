@@ -50,6 +50,16 @@ function App() {
   const inputRef = useRef(null);
 
   useEffect(() => {
+    if (state.flashcards.length > 0) {
+      document.title = `WORD: ${state.flashcards[
+        state.currentIndex
+      ].palavra.toUpperCase()}`;
+    } else {
+      document.title = "English Flash Cards";
+    }
+  }, [state.flashcards, state.currentIndex]);
+
+  useEffect(() => {
     console.log("Flashcards atualizados:", state.flashcards);
   }, [state.flashcards]);
 
@@ -63,10 +73,12 @@ function App() {
         throw new Error("Word not found");
       }
       state.flashcards.forEach((flashcard) => {
-        if(flashcard.palavra === palavra.toLowerCase()){
-          throw new Error(`Word "${palavra}" already existis on your flashcards`)
+        if (flashcard.palavra === palavra.toLowerCase()) {
+          throw new Error(
+            `Word "${palavra}" already existis on your flashcards`
+          );
         }
-      })
+      });
       const data = await response.json();
       const flashcard = {
         palavra: data[0].word,
